@@ -11,47 +11,47 @@
     nixpkgs,
     ...
   } @ inputs: let
-    # Define the systems you want to support
     supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
 
     # A helper function to generate outputs for each system
     # It imports nixpkgs for the system and passes the resulting 'pkgs' to the function 'f'
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f (import nixpkgs {inherit system;}));
   in {
-    # Use the helper to generate the packages attribute for every system
     packages = forAllSystems (
       pkgs: let
         pkgList = with pkgs; [
           # LSPs
-          lua-language-server
           vscode-langservers-extracted
-          emmet-language-server
+          vim-language-server
+          bash-language-server
+          docker-language-server
+          lua-language-server
+          angular-language-server
           svelte-language-server
-          rust-analyzer
-          ast-grep
-          prettier
-          black
-          alejandra
-          rustfmt
-          python313Packages.python-lsp-server
           typescript-language-server
           tailwindcss-language-server
-          stylua
+          python314Packages.python-lsp-server
+          java-language-server
+          kotlin-language-server
+          yaml-language-server
+          rust-analyzer
           nixd
 
-          # other tools
+          # formatters
+          rustfmt
+          ast-grep
+          stylua
+
           lua5_1
+          luarocks
           tree-sitter
           ripgrep
           gcc
 					cargo
           fzf
           gnumake
-          imagemagick
-          luarocks
         ];
       in {
-        # Define the default package for this system
         default = inputs.wrappers.wrappers.neovim.wrap {
           inherit pkgs;
           env = {
