@@ -41,9 +41,11 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.expandtab = true
+vim.opt_local.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
+vim.g.editorconfig = false
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
@@ -55,9 +57,6 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.nu = true
 
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
 vim.opt.smartindent = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -87,11 +86,11 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
 vim.opt.undofile = true
 
-vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.splitright = true
 vim.o.winborder = "rounded"
 
 -- Better Highlighting

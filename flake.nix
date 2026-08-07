@@ -34,29 +34,29 @@
           java-language-server
           kotlin-language-server
           yaml-language-server
-          rust-analyzer
+          # rust-analyzer
           nixd
 
           # formatters
-          rustfmt
+          # rustfmt
           ast-grep
           # stylua
 
-          lua5_1
+          lua5_5
           luarocks
           tree-sitter
           ripgrep
-          gcc
-					cargo
+          # gcc
+          cargo
           fzf
-          gnumake
+          # gnumake
         ];
       in {
         default = inputs.wrappers.wrappers.neovim.wrap {
           inherit pkgs;
           env = {
             "CONFIG_ROOT" = ./.;
-            "NVIM_APPNAME" = "nvim-remote";
+            "NVIM_APPNAME" = "nvim";
           };
           runtimePkgs = pkgList;
           settings.config_directory = ./.;
