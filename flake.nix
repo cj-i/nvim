@@ -40,7 +40,7 @@
           # formatters
           rustfmt
           ast-grep
-          stylua
+          # stylua
 
           lua5_1
           luarocks
