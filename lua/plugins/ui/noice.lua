@@ -9,6 +9,7 @@ vim.notify = require("notify").setup({
   render = "compact",
   stages = "slide",
 })
+
 require("noice").setup({
   messages = {
     enabled = true,

@@ -20,6 +20,7 @@ require("catppuccin").setup({
     },
   },
 })
+
 require("vimade").setup({
   recipe = { "minimalist", { animate = true } },
   fadelevel = 0.6,

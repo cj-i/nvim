@@ -13,8 +13,6 @@
   } @ inputs: let
     supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
 
-    # A helper function to generate outputs for each system
-    # It imports nixpkgs for the system and passes the resulting 'pkgs' to the function 'f'
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f (import nixpkgs {inherit system;}));
   in {
     packages = forAllSystems (
@@ -46,10 +44,10 @@
           luarocks
           tree-sitter
           ripgrep
+          git
           # gcc
           cargo
           fzf
-          # gnumake
         ];
       in {
         default = inputs.wrappers.wrappers.neovim.wrap {

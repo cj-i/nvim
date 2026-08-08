@@ -102,4 +102,4 @@ vim.o.exrc = true
 
 vim.cmd("packadd nvim.undotree")
 
-vim.cmd.colorscheme("catppuccin-nvim")
+-- vim.cmd.colorscheme("catppuccin-nvim")
