@@ -4,6 +4,7 @@ return {
   require("plugins.completion.treesitter"),
   -- require("plugins.ui.catppuccin"),
   require("plugins.ui.vscode"),
+  require("plugins.ui.rainbow"),
   require("plugins.ui.lualine"),
   require("plugins.ui.noice"),
   require("plugins.utils.convenience"),
