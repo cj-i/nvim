@@ -45,7 +45,7 @@
           tree-sitter
           ripgrep
           git
-          # gcc
+          gcc
           cargo
           fzf
         ];

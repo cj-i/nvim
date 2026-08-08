@@ -10,6 +10,7 @@ require("nvim-treesitter").setup({
 require("nvim-treesitter").install({
   "bash",
   "html",
+  "css",
   "svelte",
   "latex",
   "javascript",
@@ -21,7 +22,14 @@ require("nvim-treesitter").install({
   "regex",
   "tsx",
   "typescript",
-  "python",
   "vim",
+  "vimdoc",
   "yaml",
+  "nix",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
 })
